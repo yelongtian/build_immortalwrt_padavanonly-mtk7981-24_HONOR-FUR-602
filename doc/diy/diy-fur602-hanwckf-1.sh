@@ -2,6 +2,8 @@
 
 git clone https://github.com/Zxilly/UA2F package/UA2F
 
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main' >>feeds.conf.default
+git clone https://github.com/xiaorouji/openwrt-passwall2.git package/openwrt-passwall2
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
+git clone https://github.com/fw876/helloworld.git package/helloworld
+
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
