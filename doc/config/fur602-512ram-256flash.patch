@@ -1,0 +1,98 @@
+diff --git a/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-honor-fur-602.dts b/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-honor-fur-602.dts
+index 361731e..7686cc7 100644
+--- a/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-honor-fur-602.dts
++++ b/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-honor-fur-602.dts
+@@ -20,7 +20,7 @@
+ 	};
+ 
+         memory {
+-                reg = <0 0x40000000 0 0x10000000>;
++                reg = <0 0x40000000 0 0x20000000>;
+         };
+ 
+         leds {
+@@ -100,7 +100,7 @@
+ 
+                         partition@580000 {
+                                 label = "ubi";
+-                                reg = <0x580000 0x7200000>;
++                                reg = <0x580000 0xF980000>;
+                         };
+                 };
+         };
+diff --git a/target/linux/mediatek/image/mt7981.mk b/target/linux/mediatek/image/mt7981.mk
+index e82555a..a2cb227 100644
+--- a/target/linux/mediatek/image/mt7981.mk
++++ b/target/linux/mediatek/image/mt7981.mk
+@@ -449,7 +449,7 @@ define Device/cmcc_rax3000m
+   UBINIZE_OPTS := -E 5
+   BLOCKSIZE := 128k
+   PAGESIZE := 2048
+-  IMAGE_SIZE := 116736k
++  IMAGE_SIZE := 250368k
+   KERNEL_IN_UBI := 1
+   IMAGES += factory.bin
+   IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+@@ -498,7 +498,7 @@ define Device/cmcc_rax3000m-usboffload
+   UBINIZE_OPTS := -E 5
+   BLOCKSIZE := 128k
+   PAGESIZE := 2048
+-  IMAGE_SIZE := 116736k
++  IMAGE_SIZE := 250368k
+   KERNEL_IN_UBI := 1
+   IMAGES += factory.bin
+   IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+@@ -547,7 +547,7 @@ define Device/honor_fur-602
+   UBINIZE_OPTS := -E 5
+   BLOCKSIZE := 128k
+   PAGESIZE := 2048
+-  IMAGE_SIZE := 116736k
++  IMAGE_SIZE := 250368k
+   KERNEL_IN_UBI := 1
+   IMAGES += factory.bin
+   IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+@@ -692,7 +692,7 @@ define Device/kst_wf3000a
+   UBINIZE_OPTS := -E 5
+   BLOCKSIZE := 128k
+   PAGESIZE := 2048
+-  IMAGE_SIZE := 116736k
++  IMAGE_SIZE := 250368k
+   KERNEL_IN_UBI := 1
+   IMAGES += factory.bin
+   IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+@@ -709,7 +709,7 @@ define Device/newland_nl-wr8103
+   UBINIZE_OPTS := -E 5
+   BLOCKSIZE := 128k
+   PAGESIZE := 2048
+-  IMAGE_SIZE := 116736k
++  IMAGE_SIZE := 250368k
+   KERNEL_IN_UBI := 1
+   IMAGES += factory.bin
+   IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+@@ -726,7 +726,7 @@ define Device/newland_nl-wr9103
+   UBINIZE_OPTS := -E 5
+   BLOCKSIZE := 128k
+   PAGESIZE := 2048
+-  IMAGE_SIZE := 116736k
++  IMAGE_SIZE := 250368k
+   KERNEL_IN_UBI := 1
+   IMAGES += factory.bin
+   IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+@@ -744,7 +744,7 @@ define Device/cmcc_xr30
+   UBINIZE_OPTS := -E 5
+   BLOCKSIZE := 128k
+   PAGESIZE := 2048
+-  IMAGE_SIZE := 116736k
++  IMAGE_SIZE := 250368k
+   KERNEL_IN_UBI := 1
+   IMAGES += factory.bin
+   IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+@@ -773,7 +773,7 @@ define Device/cmcc_rax3000me
+   UBINIZE_OPTS := -E 5
+   BLOCKSIZE := 128k
+   PAGESIZE := 2048
+-  IMAGE_SIZE := 116736k
++  IMAGE_SIZE := 250368k
+   KERNEL_IN_UBI := 1
+   IMAGES += factory.bin
+   IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
